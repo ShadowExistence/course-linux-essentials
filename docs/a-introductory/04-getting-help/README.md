@@ -186,50 +186,118 @@ Find all the info you need in the man-pages. Make sure to comment the commands y
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ The free command
+### ✅ The free command
+man free:
 
-*Describe in your own words what the `free` command does. Give an example and a partial output.*
+free - Display amount of free and used memory in the system
 
-### ❌ The id command
+### ✅ The id command
 
-*Describe in your own words what the `id` command does. Give an example and a partial output.*
+id -> uid=1000(help) gid=1000(help) groups=1000(help),4(adm)...
 
-### ❌ The tree command
+displays user id and id for different groups running on system
 
-*Describe in your own words what the `tree` command does. How do you list all subdirectories too? How can you only include directories? If the `tree` command is not available on your system you can install it using `sudo apt install tree`*
+### ✅ The tree command
 
-### ❌ The which command
+*Describe in your own words what the `tree` command does. How do you list all subdirectories too? How can you only include directories?*
+
+As the command name says. It prints directories as "tree" with main direcotry conntectec with sub direcories inside and files.
+
+to print directories only you need to use option '-d'
+
+### ✅ The which command
 
 *Describe in your own words what the `which` command does. What is the result for `pwd` ?*
 
-### ❌ The file command
+which command return the path to the command.
+
+which pwd -> /usr/bin/pwd
+
+
+### ✅ The file command
 
 *Describe in your own words what the `file` command does. What is the result for `~/.bashrc` ?*
 
-### ❌ The type command
+Shows what is the file type
+
+file ~/.bashrc -> /home/help/.bashrc: ASCII text
+
+### ✅ The type command
 
 *Describe in your own words what the `type` command does. What is the result for `ls` and what is the result for `g++` ?*
 
-### ❌ Counting lines and words
+shows info about command types
+
+type ls
+ls is aliased to `ls --color=auto'
+
+type g++
+g++ is /usr/bin/g++
+
+### ✅ Counting lines and words
 
 *What command can be used to count lines and words in text? Give an example and explain the output.*
 
-### ❌ The wget command
+wc
+wc --word textFile.txt
+2 textFile.txt
+
+there are 2 words in text file so the output is 2 🤷‍♂️
+
+textFile.txt:
+
+Help me
+
+### ✅ The wget command
 
 *How can you download a file from the Internet using the command line?. Find a file online to use it on and demonstrate its usage.*
 
-### ❌ The dmesg command
+you can download anything that has http, https and ftp 
+
+wget google.com
+--2021-09-30 13:12:44--  http://google.com/
+Resolving google.com (google.com)... 142.250.187.206, 2a00:1450:4009:81f::200e
+Connecting to google.com (google.com)|142.250.187.206|:80... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: http://www.google.com/ [following]
+--2021-09-30 13:12:44--  http://www.google.com/
+Resolving www.google.com (www.google.com)... 172.217.169.4, 2a00:1450:4009:823::2004
+Connecting to www.google.com (www.google.com)|172.217.169.4|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘index.html’
+
+
+tree
+.
+├── index.html
+└── textFile.txt
+
+
+### ✅ The dmesg command
 
 *Describe in your own words what the `dmesg` command does. Give an example and a partial output.*
+
+Outputs the kernel info
+
+dmesg
+[    0.010632]  Microsoft 4.4.0-19041.1237-Microsoft 4.4.35
+[    0.113114] <3>init: (1) ERROR: ConfigInitializeCommon:570: Failed to mount /usr/lib/wsl/drive
+[    0.113118] : 19
+[    0.113222] <3>init: (1) ERROR: ConfigInitializeCommon:570: Failed to mount /usr/lib/wsl/lib
+[    0.113225] 19
 
 ### ❌ Checksums
 
 *Go to the website of Raspberry Pi - [https://www.raspberrypi.org/software/operating-systems](https://www.raspberrypi.org/software/operating-systems) and download the Raspberry Pi OS image using the `wget` command line tool. Now check if the SHA-256 checksum complies with the one being advertised on the website.*
 
 *What tool did you use to calculate the checksum? Demonstrate its usage.*
-
+sha256sum --check 2021-05-07-raspios-buster-armhf-lite.img
+sha256sum: 2021-05-07-raspios-buster-armhf-lite.img: no properly formatted SHA256 checksum lines found
 *What is the use of this hash?*
 
-### ❌ The printenv command
+### ✅ The printenv command
 
 *Describe in your own words what the `printenv` command does.*
+
+Shows environment info, it even knows it's wsl!
