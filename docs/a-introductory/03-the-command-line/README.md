@@ -311,8 +311,9 @@ shows the reference manuals for the interface
 **Check the Internet on how you can get a list of all available shells on your system.**
 cat /etc/shells
 
-### ❌ What date is it
+### ✅ What date is it
 
 **How would you request the current date and time via the terminal?**
+
 date
 
