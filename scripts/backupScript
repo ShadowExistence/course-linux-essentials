@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+DATE=$(date +"%d-%m-%Y-%H-%M-%S")
+tar -zcvf $DATE.tar.gz ~/Videos

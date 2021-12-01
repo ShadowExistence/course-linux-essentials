@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+DATA=$(date)
+MEM=$(grep MemAvailable /proc/meminfo)
+echo "[$DATA] $MEM "

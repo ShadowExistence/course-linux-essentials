@@ -617,7 +617,7 @@ sleep 10
 done
 
 
-### ❌ Available Memory
+### ✅ Available Memory
 
 *Output the available system memory together with the current date in the following format:*
 
@@ -625,9 +625,15 @@ done
 [Thu 14 May 2020 11:12:55 AM CEST] MemAvailable:   28439572 kB
 ```
 
+#!/usr/bin/env bash
+
+DATA=$(date)
+MEM=$(grep MemAvailable /proc/meminfo)
+echo "[$DATA] $MEM"
+
 *The available memory can be found in the file `/proc/meminfo`. Use the `grep` tool to filter out the line with MemAvailable.*
 
-### ❌ Fetching Github Keys
+### ✅ Fetching Github Keys
 
 *Create a script that fetches the public SSH keys of a user on GitHub and displays them in the terminal. This can be accomplished by using the curl tool to access the endpoint `https://github.com/<username>.keys`, where `<username>` is an existing github username.*
 
@@ -652,6 +658,11 @@ Fetching Keys
 
 *Create a script that filters DHCP network traffic and outputs matching MAC-Addresses, IP-Addresses and Hostnames.*
 
-### ❌ Backups
+### ✅ Backups
 
 *Choose a directory on your system (best to choose one in your home-dir). Create a script that archives this directory in a `.tar.gz` tarball file. Add a timestamp in the name of the output file.*
+
+#!/usr/bin/env bash
+
+DATE=$(date +"%d-%m-%Y-%H-%M-%S")
+tar -zcvf $DATE.tar.gz ~/Videos
